@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:broui/authentication/splash.dart';
+import 'package:broui/screens/introduction/Splash.dart';
 import 'package:broui/styles/style.dart';
 import 'package:broui/tabs/profile.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -30,34 +30,36 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: somecolor,
-        actions: [
-          Center(
-            child: GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Splash()));
-                },
-                child: Text(
-                  "BRO",
-                  style: styl_black_30,
-                )),
-          )
-        ],
+        toolbarHeight: 50,
+        backgroundColor: backcolor,
+        title: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Splash(),
+              ),
+            );
+          },
+          child: Text(
+            "BRO",
+            style: styl_white_20,
+          ),
+        ),
+        actions: [Center()],
       ),
       body: scrn[y],
       bottomNavigationBar: CurvedNavigationBar(
+        height: 60,
         color: backcolor,
         backgroundColor: somecolor,
         items: [
-          Icon(
-            Icons.home,
-            color: iconcolor,
-          ),
+          Icon(Icons.home, color: iconcolor, size: 30),
           Icon(
             Icons.account_circle,
-            color: iconcolor,
+            color: Colors.white,
+            size: 30,
           ),
         ],
         onTap: (x) {

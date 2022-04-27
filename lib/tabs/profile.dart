@@ -97,7 +97,8 @@ class _ProfileState extends State<Profile> {
   Widget box(txt, icn) {
     return Container(
       margin: EdgeInsets.all(10),
-      height: 80,
+      padding: EdgeInsets.all(20),
+      // height: 80,
       width: MediaQuery.of(context).size.width / 2.3,
       decoration: BoxDecoration(
           color: Color(0xff899878),
@@ -109,15 +110,15 @@ class _ProfileState extends State<Profile> {
               txt,
               style: TextStyle(
                 fontSize: 16,
-                color: Color.fromARGB(255, 8, 0, 0),
+                color: Color.fromARGB(255, 244, 242, 242),
               ),
             ),
           ),
           Center(
             child: Icon(
               icn,
-              color: Color.fromARGB(255, 8, 0, 0),
-              size: 60,
+              color: Color.fromARGB(255, 245, 243, 243),
+              size: 45,
             ),
           ),
         ],

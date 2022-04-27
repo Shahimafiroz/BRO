@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:broui/color/themecolor.dart';
-import 'package:broui/screens/planner/event.dart';
+import 'package:broui/screens/planner/page/eventediting.dart';
 import 'package:flutter/material.dart'
     show
         AppBar,
@@ -37,17 +37,18 @@ class _PlannerState extends State<Planner> {
       ),
       // ignore: prefer_const_constructors
       floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-        backgroundColor: Color.fromARGB(255, 108, 81, 2),
-        onPressed: () {
-          MaterialPageRoute(
-            builder: ((context) => Events()),
-          );
-        },
-      ),
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          backgroundColor: Color.fromARGB(255, 108, 81, 2),
+          // Within the `FirstRoute` widget
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Eventeditingpage()),
+            );
+          }),
     );
   }
 }
